@@ -1,6 +1,7 @@
 class Dog
-    @@all = []
     attr_accessor :name
+  
+    @@all = []
   
     def initialize(name)
       @name = name
@@ -8,9 +9,8 @@ class Dog
     end
   
     def self.all
-      @@all.each do |dog|
-        puts dog.name
-      end
+      # puts @@all.map(&:name) - another way to solve, but more complex than needed for this example
+      puts @@all.map{ |dog| dog.name }
     end
   
     def self.clear_all
